@@ -30,6 +30,9 @@ float energy_now()
 	return energy_now;
 }
 
-float battery_status() {
-	return energy_now() / energy_full();
+void battery_status(char *battery) {
+  int status;
+  
+  status = (int)(energy_now() / energy_full() * 100);
+  sprintf(battery, "%d%%", status);
 }
