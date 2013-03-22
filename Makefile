@@ -3,4 +3,4 @@
 include config.mk
 
 install:
-		gcc status-foobar/main.c -I ./status-foobar -I ./include -o bat
+		gcc status-foobar/main.c -I ./status-foobar -I ./include -o bat -lX11
