@@ -10,3 +10,10 @@ install:
 uninstall:
 	echo "Uninstalling executable file from /usr/local/bin"
 	rm -f /usr/local/bin/status-foobar
+
+tmp:
+	@echo "Installing executable file to /tmp."
+	gcc -c status-foobar/statusbar.c -I ./status-foobar -I ./include -o statusbar.o -lX11
+	gcc -c status-foobar/main.c -I ./status-foobar -I ./include -o main.o -lX11
+	gcc main.o statusbar.o -o /tmp/status-foobar -lX11
+	chmod 755 /tmp/status-foobar

@@ -1,31 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <X11/Xlib.h>
+
 #include "battery_status.h"
 #include "host.h"
 #include "datetime.h"
 #include "statusbar.h"
-
-static Display *display;
 
 main()
 {
   char current_time[50];
   char hostname[10];
   char battery[4];
+  char status_string[100];
 
-  display = XOpenDisplay(NULL);
+  launch_statusbar();
 
   for (;;sleep(1)) {
     host(hostname);
     datetime(current_time);
     battery_status(battery);
 
-    statusbar(hostname, battery, current_time);
+    status(status_string, hostname, battery, current_time);
+    statusbar(status_string);
   }
 
-  XCloseDisplay(display);
+  close_statusbar();
 
   return 0;
 }

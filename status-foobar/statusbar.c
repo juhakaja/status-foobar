@@ -1,11 +1,22 @@
-static Display *display;
+#include "statusbar.h"
 
-void statusbar(char *hostname, char *battery, char *current_time)
+void launch_statusbar()
 {
-  char status[100];
+  display = XOpenDisplay(NULL);
+}
 
-  sprintf(status, "host: %s | battery: %s | %s", hostname, battery, current_time);
+void close_statusbar()
+{
+  XCloseDisplay(display);
+}
 
-  XStoreName(display, DefaultRootWindow(display), status);
+void status(char *status_string, char *hostname, char *battery, char *current_time)
+{
+  sprintf(status_string, "host: %s | battery: %s | %s", hostname, battery, current_time);
+}
+
+void statusbar(char *status_string)
+{
+  XStoreName(display, DefaultRootWindow(display), status_string);
   XSync(display, False);
 }
