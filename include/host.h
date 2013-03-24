@@ -1,4 +1,8 @@
+#ifndef HOST_H_INCLUDED
+#define HOST_H_INCLUDED
+
 #include <unistd.h>
-#include "host.c"
 
 void host(char *hostname);
+
+#endif
