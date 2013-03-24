@@ -10,9 +10,9 @@ void close_statusbar()
   XCloseDisplay(display);
 }
 
-void status(char *status_string, char *hostname, char *battery, char *current_time)
+void status(char *status_string, char *hostname, char *battery_remain, char *current_time)
 {
-  sprintf(status_string, "host: %s | battery: %s | %s", hostname, battery, current_time);
+  sprintf(status_string, "host: %s | battery: %s | %s", hostname, battery_remain, current_time);
 }
 
 void statusbar(char *status_string)

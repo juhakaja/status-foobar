@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void battery_status(char *battery);
+void battery_status(char *battery_remain);
 
 #endif
