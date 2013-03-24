@@ -1,0 +1,1 @@
+DESTDIR = /usr/local/bin
