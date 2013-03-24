@@ -1,4 +1,8 @@
+#ifndef DATETIME_H_INCLUDED
+#define DATETIME_H_INCLUDED
+
 #include <time.h>
-#include "datetime.c"
 
 void datetime(char *current_time);
+
+#endif
