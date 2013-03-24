@@ -1,3 +1,5 @@
+#include "battery_status.h"
+
 float energy_full()
 {
   FILE *fd;
