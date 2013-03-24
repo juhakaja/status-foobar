@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "battery_status.h"
 #include "host.h"
 #include "datetime.h"
